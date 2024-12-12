@@ -49,13 +49,7 @@ public void deleteCourse(Integer id){
     courseRepository.delete(course);
 }
 
-public Course returnCourseTeacher(Integer course_id){
-    Course course=courseRepository.findCourseById(course_id);
-    if(course==null){
-        throw new ApiException("Course cannot found");
-    }
-    return course;
-}
+
 
 
 }
