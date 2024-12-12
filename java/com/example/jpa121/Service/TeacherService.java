@@ -58,6 +58,17 @@ public class TeacherService {
         }
         return teacher;
     }
+    //Create endpoint that take course id and return the teacher
+ //name for that class
+    public String returnCourseTeacher(Integer course_id){
+        Course course=courseRepository.findCourseById(course_id);
+        if(course==null){
+            throw new ApiException("Course cannot found");
+        }
+        if(course.getTeacher()==null){
+            throw new ApiException("Teacher cannot found");
 
+        }
+        return course.getTeacher().getName();
 
 }
